@@ -28,13 +28,17 @@
 * 假设运行setup程序的时候将make下载到了`D:\make`中，那么要将`D:\make`加入到环境变量中.
 * 在cmd中运行 `make -v`，如果输出了make的版本号，说明安装成功.
 
-**2.dd**
+**2.gdb**
+
+参考以下文档: https://blog.csdn.net/ksws0292756/article/details/78505240
+
+**3.dd**
 * 下载链接: http://www.chrysocome.net/dd
 * 进入链接之后点击下图所示下载链接
 ![alt text](docpic/image3.png)
 下载得到一个.zip压缩包，解压到指定位置。假解压到`D:\dd`，则需要将`D:\dd`添加到环境变量中。
 
-**3.nasm**
+**4.nasm**
 * 下载链接: https://www.nasm.us/pub/nasm/releasebuilds/3.00/win64/
 * 进入链接之后点击下图的链接
 ![alt text](image.png)
