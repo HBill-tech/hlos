@@ -17,3 +17,13 @@ bochs:master
 # 这里的 qemu 启动命令逗号后面不要加空格
 qemu: master
 	qemu-system-x86_64w -m 128M -drive file=master.img,index=0,media=disk,format=raw
+
+.PHONY: test_chs
+test_chs: $(BUILD)/boot/test/read_disk_chs.bin
+	dd if=$(BUILD)/boot/test/read_disk_chs.bin of=master.img bs=512  count=1 conv=notrunc
+	bochsdbg -q -f bochsrc.bxrc
+
+.PHONY: test_lbs
+test_lbs: $(BUILD)/boot/test/read_disk_lba.bin
+	dd if=$(BUILD)/boot/test/read_disk_lba.bin of=master.img bs=512 count=1 conv=notrunc
+	bochsdbg -q -f bochsrc.bxrc
