@@ -58,3 +58,5 @@ make qemu
 ```makefile
 make bochs
 ```
+
+## 在Ubuntu上运行
