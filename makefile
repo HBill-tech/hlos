@@ -18,12 +18,16 @@ bochs:master
 qemu: master
 	qemu-system-x86_64w -m 128M -drive file=master.img,index=0,media=disk,format=raw
 
+.PHONY: qemu-linux
+qemu-linux: master
+	qemu-system-x86_64 -m 128M -drive file=master.img,index=0,media=disk,format=raw
+
 .PHONY: test_chs
 test_chs: $(BUILD)/boot/test/read_disk_chs.bin
 	dd if=$(BUILD)/boot/test/read_disk_chs.bin of=master.img bs=512  count=1 conv=notrunc
 	bochsdbg -q -f bochsrc.bxrc
 
-.PHONY: test_lbs
-test_lbs: $(BUILD)/boot/test/read_disk_lba.bin
+.PHONY: test_lba
+test_lba: $(BUILD)/boot/test/read_disk_lba.bin
 	dd if=$(BUILD)/boot/test/read_disk_lba.bin of=master.img bs=512 count=1 conv=notrunc
 	bochsdbg -q -f bochsrc.bxrc

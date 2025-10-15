@@ -2,7 +2,7 @@
 
 ; 读取内核代码
 read_disk:
-    ; bx=目标地址
+    ; bx=内存中的目标地址
     mov bx, 0x8000
     ; ch=磁道号 cl=扇区号
     mov cx, 0x01
@@ -11,6 +11,7 @@ read_disk:
     ; dh=磁头号 dl=驱动器号(软驱从0开始, 硬盘从80H开始)
     mov dx, 0x80
     int 0x13
+    ; 如果 CF = 1, 那么重新执行 read_disk. 如果 int13  ah = 02H 中断失败, CF = 1
     jc read_disk
 
     xchg bx, bx
