@@ -44,8 +44,9 @@
 ![alt text](image.png)
 * 假设运行setup程序时选择的目录是`D:\nasm`，那么在下载完成之后要将`D:\nasm`添加到环境变量中.
 
+## Ubuntu运行环境配置
 
-## 运行命令
+## Windows上的运行命令
 
 #### 在QEMU上启动
 
@@ -59,7 +60,8 @@ make qemu
 make bochs
 ```
 
-## Ubuntu运行环境配置
+
+## Linux上的运行命令
 
 ### 在QEMU上启动
 
