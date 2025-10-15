@@ -60,3 +60,9 @@ make bochs
 ```
 
 ## Ubuntu运行环境配置
+
+### 在QEMU上启动
+
+```makefile
+make qemu-linux
+```
