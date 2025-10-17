@@ -60,7 +60,6 @@ make qemu
 make bochs
 ```
 
-
 ## Linux上的运行命令
 
 ### 在QEMU上启动
@@ -68,3 +67,6 @@ make bochs
 ```makefile
 make qemu-linux
 ```
+
+## 其他问题
+
