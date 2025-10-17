@@ -70,3 +70,4 @@ make qemu-linux
 
 ## 其他问题
 
+[doc1](./doc/doc1.md)
