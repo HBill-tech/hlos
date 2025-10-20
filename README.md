@@ -47,6 +47,7 @@ CygWin下载目录 https://cygwin.com/
 ![alt text](docpic/image3.png)
 下载得到一个.zip压缩包，解压到指定位置。假解压到`D:\dd`，则需要将`D:\dd`添加到环境变量中。
 
+
 **4.nasm**
 * 下载链接: https://www.nasm.us/pub/nasm/releasebuilds/3.00/win64/
 * 进入链接之后点击下图的链接
