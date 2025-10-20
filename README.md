@@ -50,7 +50,7 @@ CygWin下载目录 https://cygwin.com/
 
 **4.nasm**
 * 下载链接: https://www.nasm.us/pub/nasm/releasebuilds/3.00/win64/
-* 进入链接之后点击下图的链接
+* 进入链接之后点击 下图的链接
 ![alt text](./docpic/image5.png)
 * 假设运行setup程序时选择的目录是`D:\nasm`，那么在下载完成之后要将`D:\nasm`添加到环境变量中.
 
@@ -78,6 +78,6 @@ make bochs
 make qemu-linux
 ```
 
-## 其他问题
+## 问题解答文档入口
 
-[doc1](./doc/doc1.md)
+[gdb连接不上QEMU虚拟机](./doc/doc1.md)

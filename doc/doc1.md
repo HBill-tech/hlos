@@ -7,4 +7,6 @@
 配置launch文件，这里的miDebuggerPath改为x86_64_elf_tools_windows安装在电脑的位置
 ```
 "miDebuggerPath": "D:/ProgramEnv/x86_64_elf_tools_windows/bin/x86_64-elf-gdb.exe",
- ```
+```
+
+[返回README](../README.md)
