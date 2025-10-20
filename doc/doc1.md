@@ -1,4 +1,4 @@
-## gdb出现
+## gdb连接不上QEMU虚拟机
 
 配置 gdb 出现如下问题
 ![alt text](./docpic/image.png)

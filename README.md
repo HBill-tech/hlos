@@ -18,19 +18,28 @@
 * 运行setup程序时需要选定下载目录，假设目录是`D:\bochs`，要把`D:\bochs`加入到环境变量中.
 
 #### 其他工具
-**1.make**
-* 下载链接: https://gnuwin32.sourceforge.net/packages/make.htm
-* 进入链接之后点击下图中的链接
-![alt text](docpic/image1.png)
-之后会跳转到下图所示网页.
-![alt text](docpic/image2.png)
-跳转后无需操作，只需等待，make的setup程序就会被下载.
-* 假设运行setup程序的时候将make下载到了`D:\make`中，那么要将`D:\make`加入到环境变量中.
-* 在cmd中运行 `make -v`，如果输出了make的版本号，说明安装成功.
+**1.CygWin**
+CygWin下载目录 https://cygwin.com/
 
-**2.gdb**
+进入官网之后点击下图所示的"CygWin Installer"
 
-参考以下文档: https://blog.csdn.net/ksws0292756/article/details/78505240
+![alt text](./docpic/image4.png)
+
+在 CygWin 中安装的工具
+* make 4.4.1
+* gdb 14.2  &emsp; 这里的gdb不能连接到QEMU虚拟机，点击跳转到[解决办法](./doc/doc1.md)
+
+注: CygWin安装好之后，记得将CygWin/bin添加到环境变量中，并且置于其他已安装的make和gdb的环境变量之前
+
+**2.x86_64_elf_tools_windows**
+
+下载网址 https://github.com/blessingwater/GCC_x86_64-elf-tools-windows?tab=readme-ov-file
+
+进入网址之后点击右侧的 release 版本下载
+
+![alt text](./docpic/image6.png)
+
+下载好.zip安装包之后解压，将x86_64_elf_tools_windows/bin配置到环境变量中
 
 **3.dd**
 * 下载链接: http://www.chrysocome.net/dd
@@ -41,7 +50,7 @@
 **4.nasm**
 * 下载链接: https://www.nasm.us/pub/nasm/releasebuilds/3.00/win64/
 * 进入链接之后点击下图的链接
-![alt text](image.png)
+![alt text](./docpic/image5.png)
 * 假设运行setup程序时选择的目录是`D:\nasm`，那么在下载完成之后要将`D:\nasm`添加到环境变量中.
 
 ## Ubuntu运行环境配置
