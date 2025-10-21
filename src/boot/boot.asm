@@ -9,7 +9,7 @@ _start:
 ;读取内核代码
 read_disk:
     ; bx = 目标地址
-    mov bx, 0x7c00
+    mov bx, 0x7e00
     ; ch = 磁道号 cl = 扇区号
     mov cx, 0x02
     ; ah = 2 表示读扇区, 3表示写扇区 al = 读取/写入的扇区数量
