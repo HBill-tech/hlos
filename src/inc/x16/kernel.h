@@ -6,8 +6,9 @@ __asm__(".code16gcc");
 
 #define BMB __asm__ volatile("xchgw %bx, %bx")
 
-// 存储 ARDS 描述符的最大数量
+// ARDS 描述符的最大数量
 #define MEMORY_MAX_COUNT    24
+// 一个 ARDS 结构体的字节数. 当 ARDS_SIZE = 24时, 可以兼容 20 位大小的 ARDS
 #define ARDS_SIZE           24
 
 // 一个 ARDS (内存区域描述符) 的结构
