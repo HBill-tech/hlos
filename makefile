@@ -34,7 +34,8 @@ $(BUILD)/boot.bin: $(BUILD)/boot/boot.o
 $(BUILD)/kernel.bin: $(BUILD)/kernel/start.o \
 	$(BUILD)/kernel/kernel.o 	\
 	$(BUILD)/kernel/tty.o 		\
-	$(BUILD)/kernel/memory.o
+	$(BUILD)/kernel/memory.o	\
+	$(BUILD)/kernel/gdt.o
 	$(shell mkdir -p $(dir $@))
 	x86_64-elf-ld -m elf_i386 -Ttext=0x7e00 $^ -o $(BUILD)/kernel.elf
 	x86_64-elf-objcopy -O binary $(BUILD)/kernel.elf $(BUILD)/kernel.bin
@@ -46,7 +47,7 @@ master: $(BUILD)/boot.bin \
 	dd if=$(BUILD)/kernel.bin of=master.img bs=512 count=10 seek=1 conv=notrunc
 
 .PHONY: bochs
-bochs: master
+bochs: clean master
 	bochsdbg -q -f bochsrc.bxrc
 
 .PHONY: clean-linux
@@ -59,12 +60,14 @@ clean:
 
 .PHONY: qemu
 # 这里的 qemu 启动命令逗号后面不要加空格
+# 32M 内存的 qemu 虚拟机
 qemu: clean master
-	qemu-system-i386w -s -S -m 128M -drive file=master.img,index=0,media=disk,format=raw
+	qemu-system-i386w -s -S -m 32M -drive file=master.img,index=0,media=disk,format=raw
+
 
 .PHONY: qemu-linux
 qemu-linux: master
-	qemu-system-x86_64 -m 128M -drive file=master.img,index=0,media=disk,format=raw
+	qemu-system-x86_64 -m 32M -drive file=master.img,index=0,media=disk,format=raw
 
 .PHONY: test_chs
 test_chs: $(BUILD)/test/read_disk_chs.bin

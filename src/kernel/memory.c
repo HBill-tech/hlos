@@ -17,13 +17,13 @@ void memory_check() {
 
         if (signature != sign32)
         {
-            show_string("Memory check error!\r\n", 0xFF);
+            show_string("Memory check error!\r\n");
         }
 
         memory_info.count ++;
         if (index == 0)
         {
-            show_string("Memory check success\r\n", 0XFF);
+            show_string("Memory check success\r\n");
             break;
         }
     }
