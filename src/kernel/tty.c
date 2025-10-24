@@ -1,5 +1,6 @@
+// 函数的16位/32位特性由实现该函数的源文件决定，而非头文件决定
 __asm__(".code16gcc");
-#include <x16/kernel.h>
+#include <kernel.h>
 
 void show_string(char *str) {
     // 遍历字符串，直到遇到空字符

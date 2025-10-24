@@ -1,4 +1,5 @@
-#include <x16/kernel.h>
+__asm__(".code16gcc");
+#include <kernel.h>
 
 void kernel_init() {
     // 内存检测
@@ -11,4 +12,12 @@ void kernel_init() {
     // 加载 GDT 
     init_gdt();
     BMB;
+    // 开启保护模式 (cr0 第 0 位为 1)
+    uint32_t cr0 = read_cr0();
+    write_cr0(cr0 | (1 << 0));      // 设置PE位，启用保护模式
+    
+    // 远跳转刷新 CS 为 KERNEL_CODE_SEG, EIP加载protect_mode的32位地址
+    // CPU 正式进入保护模式
+    // 这里的protect_mode编码为什么是32位而不是16位呢?
+    far_jump(KERNEL_CODE_SEG, (uint32_t)protect_mode);
 }

@@ -1,5 +1,5 @@
 __asm__(".code16gcc");
-#include <x16/kernel.h>
+#include <kernel.h>
 
 // 定义 gdt 
 gdt_table_t gdt_table[GDT_SIZE] = {

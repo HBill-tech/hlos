@@ -15,3 +15,21 @@ _start:
     int 0x10
 
     jmp kernel_init
+
+[bits 32]
+
+KERNEL_CODE_SEG equ (1 * 8)
+KERNEL_DATA_SEG equ (2 * 8)
+
+extern kernel32_init
+global protect_mode
+protect_mode:
+    ; 把除了 CS 之外的段寄存器全部设置为 KERNEL_DATA_SEG
+    mov ax, KERNEL_DATA_SEG
+    mov ds, ax
+    mov es, ax
+    mov fs, ax
+    mov gs, ax
+    mov ss, ax
+
+    jmp KERNEL_CODE_SEG:kernel32_init
